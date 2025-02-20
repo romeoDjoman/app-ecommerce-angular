@@ -17,3 +17,40 @@ export const APP_ROUTES: Routes = [
     redirectTo: 'auth/login'
   }
 ];
+
+
+
+/*
+import { Routes } from '@angular/router';
+import { roleGuard } from './guards/role.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+
+export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [roleGuard('ADMIN')],
+  },
+  { path: '**', redirectTo: 'login' },
+];
+*/
+
+/*
+import { Routes } from '@angular/router';
+import { roleGuard } from './guards/role.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+
+export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [roleGuard],
+    data: { expectedRole: 'ADMIN' },
+  },
+  { path: '**', redirectTo: 'login' },
+];
+*/
