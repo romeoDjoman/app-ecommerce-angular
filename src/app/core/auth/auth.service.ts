@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {UserModel} from '../models/user-model';
 import {HttpService} from '../http/http.service';
+import {jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,17 @@ export class AuthService {
       }
     }
   }
+  // getUserRole(): string | null {
+  //   const user = this.currentUserSubject.value;
+  //   return user ? user.role.label : null;
+  // }
+
+  getUserRole(): string | null {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+    const decodedToken: any = jwtDecode(token);
+    return decodedToken.role?.replace('ROLE_', '') || null; // S'assure d'enlever le préfixe si présent
+  }
 
 
   hasRole(expectedRole: string): boolean {
@@ -43,9 +55,15 @@ export class AuthService {
       this.httpService.post('/login', credentials).subscribe({
         next: (response: any) => {
           console.log('Connexion réussie:', response);
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('currentUser', JSON.stringify(response.user));
-          this.currentUserSubject.next(response.user);
+          localStorage.setItem('token', response.bearer);
+
+          // Assurez-vous que la réponse contient bien l'utilisateur et son rôle
+          if (response.user && response.user.role) {
+            localStorage.setItem('currentUser', JSON.stringify(response.user));
+            this.currentUserSubject.next(response.user);
+          } else {
+            console.error('Rôle de l\'utilisateur manquant dans la réponse');
+          }
           observer.next(response);
           observer.complete();
         },
@@ -54,6 +72,7 @@ export class AuthService {
           observer.error(error);
         },
       });
+
     });
   }
 

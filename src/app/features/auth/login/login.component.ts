@@ -2,7 +2,6 @@
   import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
   import {AuthService} from '../../../core/auth/auth.service';
   import {Router, RouterLink} from '@angular/router';
-  import {UserModel} from '../../../core/models/user-model';
 
   @Component({
     selector: 'app-login',
@@ -43,9 +42,27 @@
       console.log('Données du formulaire :', credentials);
 
       this.authService.login(credentials).subscribe({
-        next: () => {
-          console.log('Navigation vers la page d\'inscription');
-          this.router.navigate(['/auth/signup']);
+        next: (response) => {
+          // Utilisation de la méthode getUserRole pour déterminer la redirection
+          const userRole = this.authService.getUserRole();
+          console.log('Rôle de l\'utilisateur:', userRole);
+          switch (userRole) {
+            case 'ADMIN':
+              this.router.navigate(['/admin']);
+              break;
+            case 'AUTHOR':
+              this.router.navigate(['/author']);
+              break;
+            case 'REVIEWER':
+              this.router.navigate(['/reviewer']);
+              break;
+            case 'USER':
+              this.router.navigate(['/user']);
+              break;
+            default:
+              this.loginError = 'Rôle inconnu. Contactez l\'administrateur.';
+          }
+
         },
         error: (error) => {
           this.loginError = 'Échec de la connexion. Vérifiez vos identifiants.';

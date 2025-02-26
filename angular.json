@@ -29,9 +29,31 @@
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
+
+              "src/assets/css/vendor/remixicon.css",
+              "src/assets/css/vendor/aos.css",
+              "src/assets/css/vendor/swiper-bundle.min.css",
+              "src/assets/css/vendor/owl.carousel.min.css",
+              "src/assets/css/vendor/slick.min.css",
+              "src/assets/css/vendor/animate.min.css",
+              "src/assets/css/vendor/jquery-range-ui.css",
+              "src/assets/css/style.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/vendor/tailwindcss3.4.5.js",
+              "src/assets/js/vendor/bootstrap.bundle.min.js",
+              "src/assets/js/vendor/jquery.min.js",
+              "src/assets/js/vendor/jquery.zoom.min.js",
+              "src/assets/js/vendor/aos.js",
+              "src/assets/js/vendor/swiper-bundle.min.js",
+              "src/assets/js/vendor/smoothscroll.min.js",
+              "src/assets/js/vendor/countdownTimer.js",
+              "src/assets/js/vendor/owl.carousel.min.js",
+              "src/assets/js/vendor/slick.min.js",
+              "src/assets/js/vendor/jquery-range-ui.min.js",
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,9 +111,36 @@
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+
+              "node_modules/font-awesome/css/font-awesome.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
+
+              "src/assets/css/vendor/remixicon.css",
+              "src/assets/css/vendor/aos.css",
+              "src/assets/css/vendor/swiper-bundle.min.css",
+              "src/assets/css/vendor/owl.carousel.min.css",
+              "src/assets/css/vendor/slick.min.css",
+              "src/assets/css/vendor/animate.min.css",
+              "src/assets/css/vendor/jquery-range-ui.css",
+              "src/assets/css/style.css",
+
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/vendor/tailwindcss3.4.5.js",
+              "src/assets/js/vendor/bootstrap.bundle.min.js",
+              "src/assets/js/vendor/jquery.min.js",
+              "src/assets/js/vendor/jquery.zoom.min.js",
+              "src/assets/js/vendor/aos.js",
+              "src/assets/js/vendor/swiper-bundle.min.js",
+              "src/assets/js/vendor/smoothscroll.min.js",
+              "src/assets/js/vendor/countdownTimer.js",
+              "src/assets/js/vendor/owl.carousel.min.js",
+              "src/assets/js/vendor/slick.min.js",
+              "src/assets/js/vendor/jquery-range-ui.min.js",
+              "src/assets/js/main.js"
+            ]
           }
         }
       }
