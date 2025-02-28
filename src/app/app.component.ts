@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import {RouterModule, RouterOutlet} from '@angular/router';
-import {LoginComponent} from './features/auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 // @ts-ignore
 @Component({
@@ -10,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterOutlet,
     RouterModule,
     HttpClientModule,
+    CarouselModule,
+    CommonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

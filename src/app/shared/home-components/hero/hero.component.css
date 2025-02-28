@@ -1,0 +1,43 @@
+.section-hero {
+    position: relative;
+    background: #f8f8fb;
+    overflow: hidden;
+    padding: 50px 0;
+  }
+  
+  .hero-slider {
+    position: relative;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 50px;
+    color: #3d4750;
+    font-weight: bold;
+  }
+  
+  .hero-content h1 .highlight {
+    color: #6c7fd8;
+  }
+  
+  .hero-image {
+    position: relative;
+  }
+  
+  .hero-image img {
+    width: 100%;
+  }
+  
+  .animate-shape {
+    position: absolute;
+    width: 120%;
+    top: -50px;
+    right: -50px;
+  }
+  

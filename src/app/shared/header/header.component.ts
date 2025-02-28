@@ -1,4 +1,5 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit, Renderer2} from '@angular/core';
+import { loaderData, logoData } from '../../../assets/js/imagedata.js';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,11 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
+
+  logo = logoData;
+  loader = loaderData;
+
+
 
   ngOnInit(): void {
 

@@ -8,10 +8,6 @@ export const APP_ROUTES: Routes = [
     redirectTo: '/pages/home',
     pathMatch: 'full'
   },
-  /*{
-    path: '**',
-    redirectTo: '/pages/home',
-  },*/
   {
     path: 'pages',
     loadChildren: () =>
@@ -22,17 +18,11 @@ export const APP_ROUTES: Routes = [
     loadChildren: () =>
       import('./features/auth/auth.routes').then(m => m.AUTH_ROUTES)
   },
-
-/*  {
-    path: '',
-    redirectTo: '/auth/login',
-    pathMatch: 'full'
-  },*/
- /* {
-    path: '**',
-    redirectTo: '/auth/login'
-  },*/
-
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./features/cart/cart.routes').then(m => m.CART_ROUTES)
+  },
   {
     path: 'admin',
     component: AdminDashboardComponent,
@@ -61,40 +51,3 @@ export const APP_ROUTES: Routes = [
     data: { roles: ['USER'] },
   },
 ];
-
-
-
-/*
-import { Routes } from '@angular/router';
-import { roleGuard } from './guards/role.guard';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LoginComponent } from './pages/auth/login/login.component';
-
-export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [roleGuard('ADMIN')],
-  },
-  { path: '**', redirectTo: 'login' },
-];
-*/
-
-/*
-import { Routes } from '@angular/router';
-import { roleGuard } from './guards/role.guard';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LoginComponent } from './pages/auth/login/login.component';
-
-export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [roleGuard],
-    data: { expectedRole: 'ADMIN' },
-  },
-  { path: '**', redirectTo: 'login' },
-];
-*/
