@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-become-author-reviewer></app-become-author-reviewer>
 <section class="section-register py-[50px] max-[1199px]:py-[35px]">
     <div class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
       <div class="flex flex-wrap w-full">
@@ -9,49 +10,49 @@
                 <div class="section-title mb-[20px] pb-[20px] z-[5] relative flex flex-col items-center text-center max-[991px]:pb-[0]">
                   <div class="section-detail max-[991px]:mb-[12px]">
                     <h2 class="bb-title font-quicksand mb-[0] p-[0] text-[25px] font-bold text-[#3d4750] relative inline capitalize leading-[1] tracking-[0.03rem] max-[767px]:text-[23px]">Inscription</h2>
-                    <p class="font-Poppins max-w-[400px] mt-[10px] text-[14px] text-[#686e7d] leading-[18px] font-light tracking-[0.03rem] max-[991px]:mx-[auto]">Zone d'affichage des erreurs</p>
+                    <p class="font-Poppins max-w-[400px] mt-[10px] text-[14px] text-[#686e7d] leading-[18px] font-light tracking-[0.03rem] max-[991px]:mx-[auto] cursor-pointer"><a routerLink="/auth/login">Vous avez déjà un compte ? Se connecter ! </a></p>
                   </div>
                 </div>
               </div>
               <div class="w-full px-[12px]">
-                <form method="post" class="flex flex-wrap mx-[-12px]">
-                  <!-- First Name (Prénom) -->
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-wrap mx-[-12px]">
+                  
                   <div class="bb-register-wrap w-[50%] max-[575px]:w-full px-[12px] mb-[24px]">
                     <label class="inline-block mb-[6px] text-[14px] leading-[18px] font-medium text-[#3d4750]">Prénom*</label>
-                    <input type="text" name="firstname" placeholder="Entrez votre prénom" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
+                    <input type="text" name="firstname" formControlName="firstname" placeholder="Entrez votre prénom" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
                   </div>
   
-                  <!-- Last Name (Nom) -->
+                  
                   <div class="bb-register-wrap w-[50%] max-[575px]:w-full px-[12px] mb-[24px]">
                     <label class="inline-block mb-[6px] text-[14px] leading-[18px] font-medium text-[#3d4750]">Nom*</label>
-                    <input type="text" name="lastname" placeholder="Entrez votre nom" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
+                    <input type="text" name="lastname" formControlName="lastname" placeholder="Entrez votre nom" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
                   </div>
   
-                  <!-- Name (Pseudo) -->
+                  
                   <div class="bb-register-wrap w-[50%] max-[575px]:w-full px-[12px] mb-[24px]">
                     <label class="inline-block mb-[6px] text-[14px] leading-[18px] font-medium text-[#3d4750]">Pseudo*</label>
-                    <input type="text" name="pseudo" placeholder="Entrez votre pseudo" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
+                    <input type="text" name="pseudo"  formControlName="pseudo" placeholder="Entrez votre pseudo" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
                   </div>
   
-                  <!-- Email -->
+                  
                   <div class="bb-register-wrap w-[50%] max-[575px]:w-full px-[12px] mb-[24px]">
                     <label class="inline-block mb-[6px] text-[14px] leading-[18px] font-medium text-[#3d4750]">Email*</label>
-                    <input type="email" name="email" placeholder="Entrez votre email" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
+                    <input type="email" name="email" formControlName="email" placeholder="Entrez votre email" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
                   </div>
   
-                  <!-- Mot de passe -->
+                  
                   <div class="bb-register-wrap w-[50%] max-[575px]:w-full px-[12px] mb-[24px]">
                     <label class="inline-block mb-[6px] text-[14px] leading-[18px] font-medium text-[#3d4750]">Mot de passe*</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
+                    <input type="password" name="password" formControlName="password" placeholder="Entrez votre mot de passe" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
                   </div>
   
-                  <!-- Confirmation de mot de passe -->
+                  
                   <div class="bb-register-wrap w-[50%] max-[575px]:w-full px-[12px] mb-[24px]">
                     <label class="inline-block mb-[6px] text-[14px] leading-[18px] font-medium text-[#3d4750]">Confirmation de mot de passe*</label>
-                    <input type="password" name="confirm_password" placeholder="Confirmez votre mot de passe" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
+                    <input type="password" name="confirm_password" formControlName="confirm_password" placeholder="Confirmez votre mot de passe" class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] leading-[26px] rounded-[10px]" required>
                   </div>
   
-                  <!-- Bouton d'inscription -->
+                  
                   <div class="bb-register-button w-full flex justify-center px-[12px]">
                     <button type="submit" class="bb-btn-2 transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[20px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">S'inscrire</button>
                   </div>

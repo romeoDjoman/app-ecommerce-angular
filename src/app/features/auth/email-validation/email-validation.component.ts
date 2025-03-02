@@ -3,12 +3,15 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { AuthService } from '../../../core/auth/auth.service';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../../shared/header/header.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-email-validation',
   imports: [
     ReactiveFormsModule,
-    HeaderComponent],
+    HeaderComponent,
+    CommonModule
+  ],
   templateUrl: './email-validation.component.html',
   styleUrl: './email-validation.component.css'
 })
@@ -23,7 +26,7 @@ export class EmailValidationComponent implements OnInit {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      validationCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
+      code: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
     });
   }
 
@@ -35,9 +38,9 @@ export class EmailValidationComponent implements OnInit {
     }
 
     this.isLoading = true;
-    const validationCode = this.loginForm.get('validationCode')?.value;
+    const code = this.loginForm.get('code')?.value;
 
-    this.authService.validateEmail(validationCode).subscribe(
+    this.authService.validateEmail(code).subscribe(
       (response) => {
         this.isLoading = false;
         this.router.navigate(['/pages/home']); 

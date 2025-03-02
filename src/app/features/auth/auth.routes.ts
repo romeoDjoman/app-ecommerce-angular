@@ -6,6 +6,6 @@ import { EmailValidationComponent } from './email-validation/email-validation.co
 export const AUTH_ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent},
-  { path: 'email/validation', component: EmailValidationComponent}
+  { path: 'email/activation', component: EmailValidationComponent}
 ];
 
