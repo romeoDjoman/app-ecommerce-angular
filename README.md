@@ -4,6 +4,8 @@ Site e-commerce moderne développé avec Angular 19 pour le frontend et Java Spr
 ![image](https://github.com/user-attachments/assets/26dc3e2a-f36b-495c-a356-b0b0adf165c7)
 
 
+### Technologies 
+`Angular 19` `Tailwind css`
 
 ## Statut (en cours de développement)
 
