@@ -7,6 +7,6 @@ Site e-commerce moderne développé avec Angular 19 pour le frontend et Java Spr
 ## 🛒 Fonctionnalités principales :
 
 - Interface utilisateur dynamique et responsive
-- Gestion des publication, paniers et commandes
+- Gestion des publications, paniers et commandes
 - Intégration avec une API backend en Java Spring
 - Performances optimisées et bonnes pratiques Angular
