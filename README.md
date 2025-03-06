@@ -1,6 +1,10 @@
 Site e-commerce moderne développé avec Angular 19 pour le frontend et Java Spring pour le backend. Cette application offre une interface fluide et réactive, optimisée pour une expérience utilisateur optimale.
 
 ![image](https://github.com/user-attachments/assets/62b17067-b604-4361-b484-635af301a327)
+![image](https://github.com/user-attachments/assets/77b356b3-7a1e-4175-b305-3f629b6401de)
+![image](https://github.com/user-attachments/assets/26dc3e2a-f36b-495c-a356-b0b0adf165c7)
+
+
 
 ## Statut (en cours de développement)
 
